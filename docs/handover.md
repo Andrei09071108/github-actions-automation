@@ -1,5 +1,5 @@
 # Handover
 
-Keep main at the working baseline until the hosted demonstration. Use the private audit references to stage the failing revision first, then advance the same public feature branch to the corrected child commit. Match the event, SHA and conclusion before recording each hosted result.
+The public [pull request](https://github.com/Andrei09071108/github-actions-automation/pull/1) preserves the original failure and its correction. Follow the [setup guide](setup.md) for a fresh clone. Inspect event, revision, job and conclusion when reviewing future changes. Re-run the workflow using manual dispatch as required.
 
-When updating an action, verify the release tag against its upstream commit, replace the pin and version comment together, lint the workflow and run the tests. Review runner and Python support periodically. Add the workflow status badge after a successful public main run. A new branch protection rule requires separate owner approval.
+Verify official action tags and full commit pins together before updating. Repeat static validation and the suite. This project provides a CI signal and has no deployment job. No independent code approval or branch-protection enforcement is claimed. The owner retains the private audit bundle.

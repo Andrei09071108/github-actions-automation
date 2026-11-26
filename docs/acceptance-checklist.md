@@ -1,10 +1,11 @@
-# Acceptance criteria
+# Hosted acceptance
 
-- The workflow covers main pushes, pull requests to main and manual dispatch.
-- The single read-only job checks out code, sets up Python and runs unittest with its exit code intact.
-- Baseline and corrected states pass four tests. Only the boundary test fails on the regression revision.
-- The original tests and workflow are identical in all three states.
-- The private bundle reproduces each result in a clean clone.
-- Hosted acceptance requires real run links for baseline, failed PR, corrected PR and merged main.
+| Stage | Event | Revision | Result |
+|---|---|---|---|
+| [Baseline](https://github.com/Andrei09071108/github-actions-automation/actions/runs/45894999405) | push | 914da99 | success |
+| [Controlled regression](https://github.com/Andrei09071108/github-actions-automation/actions/runs/45895112131) | pull_request | 8a3573f | failure |
+| [Correction](https://github.com/Andrei09071108/github-actions-automation/actions/runs/45895181336) | pull_request | 0b9578b | success |
+| [Merged main](https://github.com/Andrei09071108/github-actions-automation/actions/runs/45895220263) | push | 6ec8c17 | success |
+| [Manual dispatch](https://github.com/Andrei09071108/github-actions-automation/actions/runs/45895261446) | workflow_dispatch | 6ec8c17 | success |
 
-Local observations accompany the audit package.
+The same four tests ran throughout. Only test_exact_limit failed on the feature regression. Contents are read-only in the job, and checkout does not persist credentials. Review was performed by the author. The independently audited local package predates the hosted demonstration.
